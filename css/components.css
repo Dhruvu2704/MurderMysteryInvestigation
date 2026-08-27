@@ -1,0 +1,554 @@
+/* ==========================================================
+   THE FAREWELL DINNER
+   REUSABLE UI COMPONENTS
+   ==========================================================
+   This file only contains reusable components shared across
+   multiple pages (buttons, cards, polaroids, badges, nav,
+   progress bar, modal, tooltip, etc).
+
+   Page-specific layout belongs in that page's own stylesheet
+   (home.css, map.css, evidence.css, notebook.css,
+   interrogation.css) — NOT here.
+
+   This file depends on the tokens defined in globals.css and
+   must be loaded after it.
+   ========================================================== */
+
+
+/* ==========================================================
+   1. BUTTONS
+   ========================================================== */
+
+.btn-primary,
+.btn-secondary{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:var(--space-sm) var(--space-xl);
+    font-family:var(--font-body);
+    font-size:var(--fs-sm);
+    font-weight:600;
+    letter-spacing:.5px;
+    border-radius:var(--radius-sm);
+    transition:var(--transition-fast);
+}
+
+/* Primary: solid burgundy, used for the main call to action */
+
+.btn-primary{
+    background:var(--accent);
+    color:var(--paper);
+    box-shadow:var(--shadow-sm);
+}
+
+.btn-primary:hover{
+    background:var(--accent-hover);
+    transform:translateY(-2px);
+    box-shadow:var(--shadow-md);
+}
+
+.btn-primary:active{
+    transform:translateY(0);
+    box-shadow:var(--shadow-sm);
+}
+
+.btn-primary:disabled{
+    background:var(--bg-surface);
+    color:var(--text-muted);
+    box-shadow:none;
+    transform:none;
+    opacity:.6;
+}
+
+/* Secondary: transparent with a subtle gold border */
+
+.btn-secondary{
+    background:transparent;
+    color:var(--gold);
+    border:1px solid var(--gold);
+}
+
+.btn-secondary:hover{
+    background:rgba(184,148,95,.1);
+    transform:translateY(-2px);
+}
+
+.btn-secondary:active{
+    transform:translateY(0);
+}
+
+.btn-secondary:disabled{
+    color:var(--text-muted);
+    border-color:var(--border);
+    transform:none;
+    opacity:.6;
+}
+
+
+/* ==========================================================
+   2. POLAROID
+   ========================================================== */
+
+.polaroid{
+    display:inline-block;
+    width:220px;
+    background:var(--paper);
+    padding:var(--space-sm) var(--space-sm) var(--space-lg);
+    border-radius:2px;
+    box-shadow:var(--shadow-md);
+    transition:var(--transition);
+    position:relative;
+}
+
+.polaroid img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:1px;
+}
+
+.polaroid__caption{
+    display:block;
+    margin-top:var(--space-sm);
+    font-family:var(--font-hand);
+    font-size:var(--fs-lg);
+    color:var(--folder-dark);
+    text-align:center;
+}
+
+.polaroid:hover{
+    transform:translateY(-8px) scale(1.03);
+    box-shadow:var(--shadow-lg);
+    z-index:5;
+}
+
+/* Rotation modifiers — hover always straightens the photo slightly
+   so the lift reads clearly against the tilt. */
+
+.polaroid--left{
+    transform:rotate(-6deg);
+}
+
+.polaroid--left:hover{
+    transform:rotate(-2deg) translateY(-8px) scale(1.03);
+}
+
+.polaroid--right{
+    transform:rotate(6deg);
+}
+
+.polaroid--right:hover{
+    transform:rotate(2deg) translateY(-8px) scale(1.03);
+}
+
+.polaroid--small-left{
+    width:150px;
+    transform:rotate(-4deg);
+}
+
+.polaroid--small-left:hover{
+    transform:rotate(-1deg) translateY(-6px) scale(1.04);
+}
+
+.polaroid--small-right{
+    width:150px;
+    transform:rotate(4deg);
+}
+
+.polaroid--small-right:hover{
+    transform:rotate(1deg) translateY(-6px) scale(1.04);
+}
+
+
+/* ==========================================================
+   3. PAPER CARD
+   ========================================================== */
+
+.paper-card{
+    background:var(--paper);
+    color:var(--folder-dark);
+    padding:var(--space-lg);
+    border-radius:var(--radius-md);
+    box-shadow:var(--shadow-md);
+}
+
+.paper-card h1,
+.paper-card h2,
+.paper-card h3{
+    color:var(--folder-dark);
+}
+
+
+/* ==========================================================
+   4. CASE FILE
+   ========================================================== */
+   /* A dark leather/folder container reused for the case
+      introduction, suspect files, evidence details, the final
+      accusation, and the verdict screen. */
+
+.case-file{
+    background:var(--folder);
+    border:1px solid var(--border);
+    border-radius:var(--radius-md);
+    box-shadow:var(--shadow-lg);
+    padding:var(--space-xl);
+    position:relative;
+}
+
+/* Inner border, slightly inset, for a stitched-leather feel */
+
+.case-file::before{
+    content:"";
+    position:absolute;
+    inset:var(--space-sm);
+    border:1px solid rgba(184,148,95,.25);
+    border-radius:calc(var(--radius-md) - 4px);
+    pointer-events:none;
+}
+
+.case-file__title{
+    font-family:var(--font-heading);
+    font-size:var(--fs-xl);
+    color:var(--gold);
+    margin-bottom:var(--space-md);
+    padding-bottom:var(--space-sm);
+    border-bottom:1px solid var(--border);
+}
+
+.case-file__content{
+    color:var(--text-muted);
+    font-size:var(--fs-md);
+    line-height:1.7;
+}
+
+
+/* ==========================================================
+   5. PAPER TAB
+   ========================================================== */
+   /* A small tab used to label a section of a case file, like a
+      manila-folder tab. */
+
+.paper-tab{
+    display:inline-block;
+    background:var(--paper);
+    color:var(--folder-dark);
+    font-family:var(--font-body);
+    font-size:var(--fs-xs);
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    padding:var(--space-xs) var(--space-md);
+    border-radius:var(--radius-sm) var(--radius-sm) 0 0;
+    box-shadow:var(--shadow-sm);
+}
+
+
+/* ==========================================================
+   6. EVIDENCE CARD
+   ========================================================== */
+
+.evidence-card{
+    display:flex;
+    flex-direction:column;
+    gap:var(--space-xs);
+    background:var(--bg-surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius-md);
+    padding:var(--space-md);
+    transition:var(--transition-fast);
+}
+
+.evidence-card:hover{
+    border-color:var(--gold);
+    transform:translateY(-4px);
+    box-shadow:var(--shadow-md);
+}
+
+.evidence-card__number{
+    font-family:var(--font-body);
+    font-size:var(--fs-xs);
+    font-weight:700;
+    letter-spacing:1px;
+    color:var(--gold);
+    text-transform:uppercase;
+}
+
+.evidence-card__title{
+    font-family:var(--font-heading);
+    font-size:var(--fs-lg);
+    color:var(--text);
+}
+
+.evidence-card__meta{
+    font-size:var(--fs-xs);
+    color:var(--text-muted);
+}
+
+
+/* ==========================================================
+   7. STATUS BADGE
+   ========================================================== */
+
+.status-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:var(--space-xs);
+    padding:var(--space-xs) var(--space-sm);
+    border-radius:100px;
+    font-size:var(--fs-xs);
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+    border:1px solid transparent;
+}
+
+.status-badge::before{
+    content:"";
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:currentColor;
+}
+
+.status--new{
+    background:rgba(184,148,95,.12);
+    color:var(--gold);
+    border-color:rgba(184,148,95,.35);
+}
+
+.status--confirmed{
+    background:rgba(85,124,89,.15);
+    color:var(--success);
+    border-color:rgba(85,124,89,.4);
+}
+
+.status--warning{
+    background:rgba(200,145,47,.15);
+    color:var(--warning);
+    border-color:rgba(200,145,47,.4);
+}
+
+.status--locked{
+    background:rgba(184,178,168,.1);
+    color:var(--text-muted);
+    border-color:var(--border);
+}
+
+
+/* ==========================================================
+   8. NAVBAR
+   ========================================================== */
+
+.navbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:var(--space-lg);
+    padding:var(--space-md) var(--space-xl);
+    background:var(--bg-secondary);
+    border-bottom:1px solid var(--border);
+    position:relative;
+    z-index:var(--z-navbar);
+}
+
+.navbar__brand{
+    font-family:var(--font-heading);
+    font-size:var(--fs-lg);
+    color:var(--gold);
+    letter-spacing:1px;
+}
+
+.navbar__links{
+    display:flex;
+    align-items:center;
+    gap:var(--space-lg);
+}
+
+.navbar__link{
+    font-family:var(--font-body);
+    font-size:var(--fs-sm);
+    font-weight:500;
+    color:var(--text-muted);
+    padding:var(--space-xs) var(--space-xs);
+    transition:var(--transition-fast);
+    border-bottom:2px solid transparent;
+}
+
+.navbar__link:hover{
+    color:var(--text);
+}
+
+.navbar__link--active{
+    color:var(--paper);
+    border-bottom-color:var(--accent);
+}
+
+
+/* ==========================================================
+   9. PROGRESS BAR
+   ========================================================== */
+
+.progress{
+    display:flex;
+    flex-direction:column;
+    gap:var(--space-xs);
+    width:100%;
+}
+
+.progress__header{
+    display:flex;
+    justify-content:space-between;
+    font-size:var(--fs-xs);
+    color:var(--text-muted);
+    text-transform:uppercase;
+    letter-spacing:.5px;
+}
+
+.progress__track{
+    width:100%;
+    height:10px;
+    background:var(--bg-surface);
+    border-radius:100px;
+    overflow:hidden;
+    border:1px solid var(--border);
+}
+
+.progress__fill{
+    height:100%;
+    width:0%;
+    background:linear-gradient(to right,var(--accent),var(--gold));
+    border-radius:100px;
+    transition:width var(--transition-slow);
+}
+
+
+/* ==========================================================
+   10. MODAL
+   ========================================================== */
+
+.modal{
+    position:fixed;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(0,0,0,.65);
+    z-index:var(--z-modal);
+}
+
+.modal.hidden{
+    display:none;
+}
+
+.modal__panel{
+    width:min(560px,90%);
+    max-height:85vh;
+    overflow-y:auto;
+    background:var(--paper);
+    color:var(--folder-dark);
+    padding:var(--space-xl);
+    border-radius:var(--radius-md);
+    box-shadow:var(--shadow-lg);
+    position:relative;
+    animation:scaleIn var(--transition-slow);
+}
+
+.modal__close{
+    position:absolute;
+    top:var(--space-md);
+    right:var(--space-md);
+    width:32px;
+    height:32px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:var(--folder);
+    color:var(--paper);
+    font-size:var(--fs-md);
+    transition:var(--transition-fast);
+}
+
+.modal__close:hover{
+    background:var(--accent);
+}
+
+.modal__title{
+    font-family:var(--font-heading);
+    font-size:var(--fs-xl);
+    margin-bottom:var(--space-md);
+}
+
+.modal__content{
+    font-size:var(--fs-md);
+    line-height:1.7;
+}
+
+
+/* ==========================================================
+   11. TOOLTIP
+   ========================================================== */
+
+.tooltip{
+    position:relative;
+    display:inline-block;
+}
+
+.tooltip__bubble{
+    position:absolute;
+    bottom:calc(100% + var(--space-sm));
+    left:50%;
+    transform:translateX(-50%) translateY(4px);
+    background:var(--bg-surface);
+    color:var(--text);
+    font-size:var(--fs-xs);
+    padding:var(--space-xs) var(--space-sm);
+    border-radius:var(--radius-sm);
+    box-shadow:var(--shadow-sm);
+    white-space:nowrap;
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transition:var(--transition-fast);
+    z-index:var(--z-tooltip);
+}
+
+.tooltip:hover .tooltip__bubble,
+.tooltip:focus-within .tooltip__bubble{
+    opacity:1;
+    visibility:visible;
+    transform:translateX(-50%) translateY(0);
+}
+
+
+/* ==========================================================
+   12. DIVIDER
+   ========================================================== */
+
+.divider{
+    width:100%;
+    height:1px;
+    background:var(--border);
+    border:none;
+    margin:var(--space-lg) 0;
+}
+
+
+/* ==========================================================
+   13. PAPER NOTE
+   ========================================================== */
+   /* A handwritten-style sticky note used for personal
+      investigation annotations. */
+
+.paper-note{
+    background:var(--paper-dark);
+    color:var(--folder-dark);
+    padding:var(--space-md);
+    border-radius:var(--radius-sm);
+    box-shadow:var(--shadow-sm);
+    font-family:var(--font-hand);
+    font-size:var(--fs-lg);
+    line-height:1.5;
+    transform:rotate(-1.5deg);
+    max-width:280px;
+}
