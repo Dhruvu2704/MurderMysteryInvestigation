@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Student Marksheet — Dhruvi Srivastava</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#20241E;
+    --paper:#EFEDE3;
+    --line:#D3CEBB;
+    --accent:#8A6D3B;
+    --deep:#3A3223;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Inter', Arial, sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    padding:50px 20px;
+  }
+  .sheet{
+    max-width:760px;
+    margin:0 auto;
+    background:#fffdf7;
+    border:1px solid var(--line);
+    padding:0;
+    position:relative;
+  }
+  .band{
+    background:var(--deep);
+    color:#f2ede0;
+    padding:30px 44px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .band h1{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:26px;
+    margin:0;
+    letter-spacing:0.3px;
+  }
+  .band p{
+    margin:4px 0 0;
+    font-size:12.5px;
+    letter-spacing:1px;
+    color:#c9bd9b;
+    text-transform:uppercase;
+  }
+  .band .year{
+    text-align:right;
+    font-size:13px;
+    color:#c9bd9b;
+  }
+  .body-pad{padding:36px 44px 44px;}
+  .meta-row{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+    margin-bottom:34px;
+  }
+  .meta-row div span{
+    display:block;
+    font-size:10.5px;
+    text-transform:uppercase;
+    letter-spacing:0.8px;
+    color:#9a927c;
+    margin-bottom:4px;
+  }
+  .meta-row div strong{
+    font-family:'Fraunces', serif;
+    font-size:15.5px;
+    font-weight:600;
+    color:var(--deep);
+  }
+  .subject-row{
+    display:grid;
+    grid-template-columns:1.4fr 2fr 50px 44px;
+    align-items:center;
+    gap:14px;
+    padding:12px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .subject-row:first-of-type{border-top:1px solid var(--line);}
+  .subject-name{font-size:14px; color:var(--ink);}
+  .mark-track{
+    height:9px;
+    background:#e5e0cf;
+    border-radius:5px;
+    overflow:hidden;
+  }
+  .mark-fill{
+    height:100%;
+    background:var(--accent);
+    border-radius:5px;
+  }
+  .mark-num{
+    text-align:right;
+    font-size:13.5px;
+    font-weight:600;
+    color:var(--deep);
+  }
+  .grade-pill{
+    text-align:center;
+    font-size:11.5px;
+    font-weight:700;
+    padding:3px 0;
+    border-radius:20px;
+    background:var(--deep);
+    color:#f2ede0;
+  }
+  .summary{
+    margin-top:32px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:24px;
+    padding-top:24px;
+    border-top:2px solid var(--deep);
+  }
+  .summary .totals{font-size:13.5px; color:#5b543f; line-height:1.9;}
+  .summary .totals strong{color:var(--deep);}
+  .badge{
+    width:96px;
+    height:96px;
+    border-radius:50%;
+    border:6px solid var(--accent);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    color:var(--deep);
+  }
+  .badge strong{font-family:'Fraunces',serif; font-size:22px;}
+  .badge span{font-size:10px; text-transform:uppercase; letter-spacing:0.5px; color:#8a836f;}
+</style>
+</head>
+<body>
+  <main class="sheet">
+    <div class="band">
+      <div>
+        <h1>Marksheet</h1>
+        <p>B.Tech (CSE) — Semester IV</p>
+      </div>
+      <div class="year">Academic Year<br>2025–26</div>
+    </div>
+
+    <div class="body-pad">
+      <div class="meta-row">
+        <div><span>Student Name</span><strong>Dhruvi Srivastava</strong></div>
+        <div><span>Roll Number</span><strong>23481000057</strong></div>
+        <div><span>Class</span><strong>NA</strong></div>
+        <div><span>Exam</span><strong>End Semester</strong></div>
+      </div>
+
+      <div class="subject-row">
+        <div class="subject-name">Web Technologies</div>
+        <div class="mark-track"><div class="mark-fill" style="width:91%"></div></div>
+        <div class="mark-num">91</div>
+        <div class="grade-pill">A+</div>
+      </div>
+      <div class="subject-row">
+        <div class="subject-name">Data Structures and Algorithms</div>
+        <div class="mark-track"><div class="mark-fill" style="width:85%"></div></div>
+        <div class="mark-num">85</div>
+        <div class="grade-pill">A</div>
+      </div>
+      <div class="subject-row">
+        <div class="subject-name">Database Management Systems</div>
+        <div class="mark-track"><div class="mark-fill" style="width:88%"></div></div>
+        <div class="mark-num">88</div>
+        <div class="grade-pill">A</div>
+      </div>
+      <div class="subject-row">
+        <div class="subject-name">Operating Systems</div>
+        <div class="mark-track"><div class="mark-fill" style="width:80%"></div></div>
+        <div class="mark-num">80</div>
+        <div class="grade-pill">B+</div>
+      </div>
+      <div class="subject-row">
+        <div class="subject-name">User Interface Design</div>
+        <div class="mark-track"><div class="mark-fill" style="width:94%"></div></div>
+        <div class="mark-num">94</div>
+        <div class="grade-pill">A+</div>
+      </div>
+
+      <div class="summary">
+        <div class="totals">
+          Total Marks: <strong>438 / 500</strong><br>
+          Result: <strong>Pass</strong>
+        </div>
+        <div class="badge">
+          <strong>87.6%</strong>
+          <span>Overall</span>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

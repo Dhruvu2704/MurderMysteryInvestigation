@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Create an Account — Dhruvi Srivastava Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#211c2b;
+    --muted:#726c7d;
+    --line:#e4e1ea;
+    --accent:#5b3f8a;
+    --bg:#faf9fc;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Inter', Arial, sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    padding:44px 20px;
+  }
+  .card{
+    max-width:560px;
+    margin:0 auto;
+    background:#fff;
+    border-radius:18px;
+    box-shadow:0 16px 40px rgba(91,63,138,0.10);
+    padding:40px 42px 34px;
+  }
+  .step-badge{
+    display:inline-block;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--accent);
+    background:#efe9f8;
+    padding:5px 12px;
+    border-radius:20px;
+    margin-bottom:14px;
+  }
+  h1{
+    font-family:'Poppins',sans-serif;
+    font-size:24px;
+    margin:0 0 4px;
+  }
+  .lede{
+    font-size:14px;
+    color:var(--muted);
+    margin:0 0 30px;
+  }
+  .grid-2{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+  }
+  fieldset{
+    border:none;
+    padding:0;
+    margin:0 0 20px;
+    grid-column:1 / -1;
+  }
+  .field{margin-bottom:18px;}
+  .field.full{grid-column:1 / -1;}
+  label{
+    display:block;
+    font-size:12.5px;
+    font-weight:600;
+    margin-bottom:6px;
+    color:#4c4757;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  select{
+    width:100%;
+    padding:11px 13px;
+    border:1.5px solid var(--line);
+    border-radius:10px;
+    font-size:14px;
+    font-family:inherit;
+    color:var(--ink);
+    background:#fcfbfe;
+  }
+  input:focus, select:focus{
+    outline:none;
+    border-color:var(--accent);
+    background:#fff;
+  }
+  .hint{
+    font-size:11.5px;
+    color:var(--muted);
+    margin-top:5px;
+  }
+  legend{
+    font-size:12.5px;
+    font-weight:600;
+    padding:0;
+    margin-bottom:10px;
+    color:#4c4757;
+  }
+  .choice-row{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:10px;
+    font-size:13.5px;
+  }
+  .choice-row input{
+    width:16px;
+    height:16px;
+    accent-color:var(--accent);
+  }
+  .choice-row label{
+    margin:0;
+    font-weight:400;
+  }
+  .pill-group{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .pill-group label{
+    border:1.5px solid var(--line);
+    border-radius:999px;
+    padding:8px 18px;
+    font-size:13px;
+    font-weight:500;
+    cursor:pointer;
+    color:#4c4757;
+  }
+  .pill-group input{position:absolute; opacity:0; pointer-events:none;}
+  .pill-group input:checked + label{
+    border-color:var(--accent);
+    background:#efe9f8;
+    color:var(--accent);
+    font-weight:600;
+  }
+  button{
+    width:100%;
+    padding:13px;
+    background:var(--accent);
+    color:#fff;
+    border:none;
+    border-radius:999px;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    margin-top:6px;
+  }
+  button:hover{background:#4a3271;}
+  .terms{
+    font-size:12.5px;
+    color:var(--muted);
+    margin-top:16px;
+    text-align:center;
+  }
+  .terms a{color:var(--accent); text-decoration:none; font-weight:600;}
+</style>
+</head>
+<body>
+  <main class="card">
+    <span class="step-badge">Step 1 of 1</span>
+    <h1>Create an account</h1>
+    <p class="lede">Sign up to save projects and get in touch — takes less than a minute.</p>
+
+    <form action="#" method="post">
+      <div class="grid-2">
+        <div class="field full">
+          <label for="fullname">Full name</label>
+          <input type="text" id="fullname" name="fullname" placeholder="Your full name" required>
+        </div>
+
+        <div class="field full">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" minlength="8" required>
+          <p class="hint">At least 8 characters.</p>
+        </div>
+
+        <div class="field">
+          <label for="country">Country</label>
+          <select id="country" name="country">
+            <option value="">Select</option>
+            <option value="in">India</option>
+            <option value="us">United States</option>
+            <option value="uk">United Kingdom</option>
+            <option value="ca">Canada</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <fieldset>
+          <legend>Gender</legend>
+          <div class="pill-group">
+            <input type="radio" id="gender-female" name="gender" value="female"><label for="gender-female">Female</label>
+            <input type="radio" id="gender-male" name="gender" value="male"><label for="gender-male">Male</label>
+            <input type="radio" id="gender-other" name="gender" value="other"><label for="gender-other">Other</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Preferences</legend>
+          <div class="choice-row">
+            <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+            <label for="newsletter">Send me occasional updates</label>
+          </div>
+          <div class="choice-row">
+            <input type="checkbox" id="terms" name="terms" value="agreed" required>
+            <label for="terms">I agree to the Terms &amp; Conditions</label>
+          </div>
+        </fieldset>
+      </div>
+
+      <button type="submit">Create account</button>
+      <p class="terms">Already have an account? <a href="#">Log in instead</a></p>
+    </form>
+  </main>
+</body>
+</html>

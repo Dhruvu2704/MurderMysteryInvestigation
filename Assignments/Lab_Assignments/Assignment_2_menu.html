@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Menu — Saffron Leaf Kitchen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5EF;
+    --card:#ffffff;
+    --ink:#232019;
+    --muted:#8a8375;
+    --accent:#C1502E;
+    --line:#ECE7DC;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Inter', Arial, sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    padding:50px 20px;
+  }
+  .menu{
+    max-width:780px;
+    margin:0 auto;
+  }
+  header{
+    text-align:center;
+    margin-bottom:40px;
+  }
+  header h1{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:38px;
+    margin:0;
+  }
+  header p{
+    margin:8px 0 0;
+    font-size:12.5px;
+    letter-spacing:2px;
+    color:var(--accent);
+    text-transform:uppercase;
+    font-weight:600;
+  }
+  .tabs{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:36px;
+  }
+  .tabs span{
+    font-size:12.5px;
+    font-weight:600;
+    padding:7px 16px;
+    border-radius:999px;
+    border:1.5px solid var(--line);
+    color:var(--muted);
+  }
+  .tabs span.active{
+    background:var(--accent);
+    border-color:var(--accent);
+    color:#fff;
+  }
+  .course{margin-bottom:38px;}
+  .course h2{
+    font-family:'Fraunces', serif;
+    font-size:19px;
+    font-weight:600;
+    margin:0 0 16px;
+    color:var(--ink);
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+  .item-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:16px 18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
+  }
+  .item-name{
+    font-size:15px;
+    font-weight:600;
+  }
+  .item-note{
+    display:block;
+    font-size:12px;
+    color:var(--muted);
+    margin-top:3px;
+    font-weight:400;
+  }
+  .price{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:15px;
+    color:var(--accent);
+    white-space:nowrap;
+  }
+  .list-simple{
+    display:flex;
+    flex-direction:column;
+    gap:0;
+  }
+  .list-simple .row{
+    display:flex;
+    justify-content:space-between;
+    padding:10px 4px;
+    border-bottom:1px dashed var(--line);
+    font-size:14.5px;
+  }
+  .list-simple .row:last-child{border-bottom:none;}
+  @media (max-width:600px){
+    .grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+  <main class="menu">
+    <header>
+      <h1>Saffron Leaf Kitchen</h1>
+      <p>Estd. 2018 · All-Day Dining</p>
+    </header>
+
+    <div class="tabs">
+      <span class="active">Starters</span>
+      <span>Mains</span>
+      <span>Breads &amp; Rice</span>
+      <span>Desserts</span>
+    </div>
+
+    <section class="course">
+      <h2>Starters</h2>
+      <div class="grid">
+        <div class="item-card">
+          <div>
+            <div class="item-name">Paneer Tikka</div>
+            <span class="item-note">Char-grilled cottage cheese, mint chutney</span>
+          </div>
+          <span class="price">₹240</span>
+        </div>
+        <div class="item-card">
+          <div>
+            <div class="item-name">Veg Spring Rolls</div>
+            <span class="item-note">Crisp rolls, sweet chilli dip</span>
+          </div>
+          <span class="price">₹180</span>
+        </div>
+        <div class="item-card">
+          <div>
+            <div class="item-name">Paneer 65</div>
+            <span class="item-note">Spiced, deep-fried, curry leaf</span>
+          </div>
+          <span class="price">₹260</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="course">
+      <h2>Main Course</h2>
+      <div class="grid">
+        <div class="item-card">
+          <div>
+            <div class="item-name">Dal Makhani</div>
+            <span class="item-note">Slow-cooked black lentils, cream</span>
+          </div>
+          <span class="price">₹240</span>
+        </div>
+        <div class="item-card">
+          <div>
+            <div class="item-name">Butter Paneer Masala</div>
+            <span class="item-note">Tomato-cashew gravy</span>
+          </div>
+          <span class="price">₹320</span>
+        </div>
+        <div class="item-card">
+          <div>
+            <div class="item-name">Veg Biryani</div>
+            <span class="item-note">Basmati rice, raita</span>
+          </div>
+          <span class="price">₹260</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="course">
+      <h2>Breads &amp; Rice</h2>
+      <div class="list-simple">
+        <div class="row"><span>Tandoori Roti</span><span class="price">₹35</span></div>
+        <div class="row"><span>Butter Naan</span><span class="price">₹55</span></div>
+        <div class="row"><span>Steamed Rice</span><span class="price">₹150</span></div>
+      </div>
+    </section>
+
+    <section class="course">
+      <h2>Desserts</h2>
+      <div class="list-simple">
+        <div class="row"><span>Gulab Jamun</span><span class="price">₹120</span></div>
+        <div class="row"><span>Kulfi Falooda</span><span class="price">₹150</span></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
