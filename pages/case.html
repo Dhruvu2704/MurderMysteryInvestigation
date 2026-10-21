@@ -1,6 +1,147 @@
-<!-- ==========================================================
-     THE FAREWELL DINNER
-     CASE PAGE
-     ==========================================================
-     Reserved for a later phase. Not implemented yet.
-     ========================================================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Case 071: The Farewell Dinner. Read the case briefing before entering the crime scene.">
+    <meta name="theme-color" content="#111315">
+    <title>Case Briefing: Case 071, The Farewell Dinner</title>
+
+    <link rel="stylesheet" href="../css/globals.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/case.css">
+</head>
+<body class="case">
+
+    <nav class="navbar" aria-label="Primary">
+        <a class="navbar__brand" href="../index.html" data-navigate>CASE FILE 071</a>
+        <span class="status-badge status--new">Case status: Open</span>
+    </nav>
+
+    <main class="case__main container">
+
+        <nav class="route" aria-label="Investigation progress">
+            <ol class="route__list">
+                <li class="route__step"><a href="../index.html" data-navigate>Home</a></li>
+                <li class="route__step route__step--current" aria-current="step"><span>Case Briefing</span></li>
+                <li class="route__step">Crime Scene</li>
+            </ol>
+        </nav>
+
+        <header class="case__header">
+            <div class="case__folder-tab">
+                <span class="paper-tab">Case File 071</span>
+            </div>
+            <h1 class="case__title">The Farewell Dinner</h1>
+            <p class="case__subtitle">Case Briefing</p>
+        </header>
+
+        <section class="briefing" aria-label="Case briefing">
+
+            <article class="briefing__document">
+                <span class="paper-tab briefing__tab">Briefing</span>
+                <div class="paper-card briefing__sheet">
+
+                    <dl class="briefing__meta">
+                        <div>
+                            <dt>Assigned to</dt>
+                            <dd>Lead Detective</dd>
+                        </div>
+                        <div>
+                            <dt>Subject</dt>
+                            <dd>Homicide</dd>
+                        </div>
+                    </dl>
+
+                    <p class="briefing__lede">
+                        A farewell dinner ended in murder. By the end of the evening one guest
+                        was dead, and everyone left at the table has something to say about it,
+                        or something to hide.
+                    </p>
+
+                    <p>
+                        You have been assigned as the detective on Case 071. Examine the scene,
+                        gather evidence, question the suspects and establish what really
+                        happened that night.
+                    </p>
+
+                    <p class="briefing__directive">
+                        Nothing in this file names the culprit. Work only from what you can prove.
+                    </p>
+
+                </div>
+            </article>
+
+            <aside class="briefing__side" aria-label="Case information">
+                <div class="case-file">
+                    <div class="case-file__title">Case Information</div>
+                    <dl class="dossier">
+                        <div class="dossier__row">
+                            <dt>Case Number</dt>
+                            <dd>071</dd>
+                        </div>
+                        <div class="dossier__row">
+                            <dt>Case Title</dt>
+                            <dd>The Farewell Dinner</dd>
+                        </div>
+                        <div class="dossier__row">
+                            <dt>Case Type</dt>
+                            <dd>Murder Investigation</dd>
+                        </div>
+                        <div class="dossier__row">
+                            <dt>Status</dt>
+                            <dd><span class="status-badge status--new">Open</span></dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <p class="paper-note case__note">Trust the evidence. Question everything.</p>
+            </aside>
+
+        </section>
+
+        <section class="objectives" aria-labelledby="objectives-title">
+
+            <h2 class="objectives__title" id="objectives-title">Investigation Objectives</h2>
+
+            <div class="paper-card objectives__sheet">
+                <ol class="orders">
+                    <li class="orders__item">
+                        <span class="orders__no" aria-hidden="true">01</span>
+                        <span class="orders__text">Inspect the crime scene.</span>
+                    </li>
+                    <li class="orders__item">
+                        <span class="orders__no" aria-hidden="true">02</span>
+                        <span class="orders__text">Collect and examine evidence.</span>
+                    </li>
+                    <li class="orders__item">
+                        <span class="orders__no" aria-hidden="true">03</span>
+                        <span class="orders__text">Investigate the suspects.</span>
+                    </li>
+                    <li class="orders__item">
+                        <span class="orders__no" aria-hidden="true">04</span>
+                        <span class="orders__text">Solve investigation puzzles.</span>
+                    </li>
+                    <li class="orders__item">
+                        <span class="orders__no" aria-hidden="true">05</span>
+                        <span class="orders__text">Connect the discovered information.</span>
+                    </li>
+                    <li class="orders__item">
+                        <span class="orders__no" aria-hidden="true">06</span>
+                        <span class="orders__text">Make the final accusation.</span>
+                    </li>
+                </ol>
+            </div>
+
+        </section>
+
+        <div class="case__actions">
+            <a class="case__back" href="../index.html" data-navigate aria-label="Back to the home page">&larr; Back</a>
+            <a class="btn-primary case__cta" href="map.html" data-navigate>Enter Crime Scene</a>
+        </div>
+
+    </main>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

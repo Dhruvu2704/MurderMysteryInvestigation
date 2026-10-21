@@ -1,24 +1,3 @@
-/* ==========================================================
-   THE FAREWELL DINNER
-   REUSABLE UI COMPONENTS
-   ==========================================================
-   This file only contains reusable components shared across
-   multiple pages (buttons, cards, polaroids, badges, nav,
-   progress bar, modal, tooltip, etc).
-
-   Page-specific layout belongs in that page's own stylesheet
-   (home.css, map.css, evidence.css, notebook.css,
-   interrogation.css) — NOT here.
-
-   This file depends on the tokens defined in globals.css and
-   must be loaded after it.
-   ========================================================== */
-
-
-/* ==========================================================
-   1. BUTTONS
-   ========================================================== */
-
 .btn-primary,
 .btn-secondary{
     display:inline-flex;
@@ -32,9 +11,6 @@
     border-radius:var(--radius-sm);
     transition:var(--transition-fast);
 }
-
-/* Primary: solid burgundy, used for the main call to action */
-
 .btn-primary{
     background:var(--accent);
     color:var(--paper);
@@ -60,7 +36,6 @@
     opacity:.6;
 }
 
-/* Secondary: transparent with a subtle gold border */
 
 .btn-secondary{
     background:transparent;
@@ -84,10 +59,6 @@
     opacity:.6;
 }
 
-
-/* ==========================================================
-   2. POLAROID
-   ========================================================== */
 
 .polaroid{
     display:inline-block;
@@ -121,9 +92,6 @@
     box-shadow:var(--shadow-lg);
     z-index:5;
 }
-
-/* Rotation modifiers — hover always straightens the photo slightly
-   so the lift reads clearly against the tilt. */
 
 .polaroid--left{
     transform:rotate(-6deg);
@@ -159,11 +127,6 @@
     transform:rotate(1deg) translateY(-6px) scale(1.04);
 }
 
-
-/* ==========================================================
-   3. PAPER CARD
-   ========================================================== */
-
 .paper-card{
     background:var(--paper);
     color:var(--folder-dark);
@@ -178,14 +141,6 @@
     color:var(--folder-dark);
 }
 
-
-/* ==========================================================
-   4. CASE FILE
-   ========================================================== */
-   /* A dark leather/folder container reused for the case
-      introduction, suspect files, evidence details, the final
-      accusation, and the verdict screen. */
-
 .case-file{
     background:var(--folder);
     border:1px solid var(--border);
@@ -194,8 +149,6 @@
     padding:var(--space-xl);
     position:relative;
 }
-
-/* Inner border, slightly inset, for a stitched-leather feel */
 
 .case-file::before{
     content:"";
@@ -221,13 +174,6 @@
     line-height:1.7;
 }
 
-
-/* ==========================================================
-   5. PAPER TAB
-   ========================================================== */
-   /* A small tab used to label a section of a case file, like a
-      manila-folder tab. */
-
 .paper-tab{
     display:inline-block;
     background:var(--paper);
@@ -241,11 +187,6 @@
     border-radius:var(--radius-sm) var(--radius-sm) 0 0;
     box-shadow:var(--shadow-sm);
 }
-
-
-/* ==========================================================
-   6. EVIDENCE CARD
-   ========================================================== */
 
 .evidence-card{
     display:flex;
@@ -283,11 +224,6 @@
     font-size:var(--fs-xs);
     color:var(--text-muted);
 }
-
-
-/* ==========================================================
-   7. STATUS BADGE
-   ========================================================== */
 
 .status-badge{
     display:inline-flex;
@@ -335,9 +271,6 @@
 }
 
 
-/* ==========================================================
-   8. NAVBAR
-   ========================================================== */
 
 .navbar{
     display:flex;
@@ -384,10 +317,6 @@
 }
 
 
-/* ==========================================================
-   9. PROGRESS BAR
-   ========================================================== */
-
 .progress{
     display:flex;
     flex-direction:column;
@@ -421,10 +350,6 @@
     transition:width var(--transition-slow);
 }
 
-
-/* ==========================================================
-   10. MODAL
-   ========================================================== */
 
 .modal{
     position:fixed;
@@ -485,9 +410,6 @@
 }
 
 
-/* ==========================================================
-   11. TOOLTIP
-   ========================================================== */
 
 .tooltip{
     position:relative;
@@ -521,10 +443,6 @@
 }
 
 
-/* ==========================================================
-   12. DIVIDER
-   ========================================================== */
-
 .divider{
     width:100%;
     height:1px;
@@ -534,11 +452,6 @@
 }
 
 
-/* ==========================================================
-   13. PAPER NOTE
-   ========================================================== */
-   /* A handwritten-style sticky note used for personal
-      investigation annotations. */
 
 .paper-note{
     background:var(--paper-dark);

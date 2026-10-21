@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Color Theme</title>
+</head>
+<body>
+    <h2>Change Color Theme</h2>
+
+    <p>Click the button to change the theme.</p>
+
+    <button onclick="changeTheme()">Change Theme</button>
+
+    <script>
+        let dark = false;
+
+        function changeTheme() {
+            if (dark == false) {
+                document.body.style.backgroundColor = "black";
+                document.body.style.color = "white";
+                dark = true;
+            } else {
+                document.body.style.backgroundColor = "white";
+                document.body.style.color = "black";
+                dark = false;
+            }
+        }
+    </script>
+</body>
+</html>

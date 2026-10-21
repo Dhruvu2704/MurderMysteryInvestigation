@@ -1,6 +1,179 @@
-<!-- ==========================================================
-     THE FAREWELL DINNER
-     MAP PAGE
-     ==========================================================
-     Reserved for a later phase. Not implemented yet.
-     ========================================================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Case 071: The Farewell Dinner. Crime scene map and investigation hub.">
+    <meta name="theme-color" content="#111315">
+    <title>Crime Scene Map: Case 071, The Farewell Dinner</title>
+
+    <link rel="stylesheet" href="../css/globals.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/case.css">
+    <link rel="stylesheet" href="../css/map.css">
+</head>
+<body class="map">
+
+    <nav class="navbar" aria-label="Primary">
+        <a class="navbar__brand" href="../index.html" data-navigate>CASE FILE 071</a>
+        <span class="status-badge status--new">Active investigation</span>
+    </nav>
+
+    <main class="map__main container">
+
+        <nav class="route" aria-label="Investigation progress">
+            <ol class="route__list">
+                <li class="route__step"><a href="../index.html" data-navigate>Home</a></li>
+                <li class="route__step"><a href="case.html" data-navigate>Case Briefing</a></li>
+                <li class="route__step route__step--current" aria-current="step"><span>Crime Scene</span></li>
+            </ol>
+        </nav>
+
+        <header class="map__header">
+            <div class="map__folder-tab">
+                <span class="paper-tab">Case 071</span>
+            </div>
+            <h1 class="map__title">The Farewell Dinner</h1>
+            <p class="map__subtitle">Crime Scene Map</p>
+            <p class="map__tagline">Explore the scene. Follow the evidence.</p>
+        </header>
+
+        <div class="hub">
+
+            <!-- ==============================================
+                 FLOOR PLAN
+                 ============================================== -->
+            <section class="hub__plan" aria-labelledby="plan-title">
+                <div class="plan-sheet paper-card">
+
+                    <div class="plan-sheet__head">
+                        <h2 class="plan-sheet__title" id="plan-title">Floor Plan</h2>
+                        <p class="plan-sheet__hint">Choose where to investigate. Any available room, in any order.</p>
+                    </div>
+
+                    <div class="plan">
+
+                        <!-- KITCHEN -->
+                        <article class="room room--kitchen room--door-right room--door-down" data-room="kitchen" data-status="available" aria-labelledby="room-kitchen">
+                            <h3 class="room__name" id="room-kitchen">Kitchen</h3>
+                            <p class="room__desc">Where the meal was prepared.</p>
+                            <span class="status-badge status--confirmed">Available</span>
+                            <a class="btn-secondary room__action" href="room.html?room=kitchen" data-navigate aria-label="Enter the Kitchen">Enter room</a>
+                        </article>
+
+                        <!-- DINING ROOM: PRIMARY CRIME SCENE -->
+                        <article class="room room--dining room--door-right room--door-down" data-room="dining" data-status="available" aria-labelledby="room-dining">
+                            <svg class="room__plan-art" viewBox="0 0 200 120" aria-hidden="true" focusable="false">
+                                <rect x="40" y="30" width="120" height="60" rx="6"/>
+                                <g>
+                                    <circle cx="62" cy="18" r="8"/><circle cx="100" cy="18" r="8"/><circle cx="138" cy="18" r="8"/>
+                                    <circle cx="62" cy="102" r="8"/><circle cx="100" cy="102" r="8"/><circle cx="138" cy="102" r="8"/>
+                                </g>
+                            </svg>
+                            <span class="room__flag">Primary crime scene</span>
+                            <h3 class="room__name" id="room-dining">Dining Room</h3>
+                            <p class="room__desc">One dinner. One victim. The investigation begins here.</p>
+                            <span class="status-badge status--confirmed">Available</span>
+                            <a class="btn-primary room__action" href="room.html" data-navigate aria-label="Enter the Dining Room, the primary crime scene">Enter room</a>
+                        </article>
+
+                        <!-- STUDY: LOCKED -->
+                        <article class="room room--study room--locked room--door-down" data-room="study" data-status="locked" aria-labelledby="room-study">
+                            <h3 class="room__name" id="room-study">Study</h3>
+                            <p class="room__desc">Further investigation required.</p>
+                            <span class="status-badge status--locked">Locked</span>
+                            <button class="btn-secondary room__action" type="button" disabled aria-label="Study is locked. Further investigation required.">Locked</button>
+                        </article>
+
+                        <!-- HALLWAY -->
+                        <article class="room room--hallway" data-room="hallway" data-status="available" aria-labelledby="room-hallway">
+                            <div class="room__text">
+                                <h3 class="room__name" id="room-hallway">Hallway</h3>
+                                <p class="room__desc">The route between every room.</p>
+                            </div>
+                            <span class="status-badge status--confirmed">Available</span>
+                            <a class="btn-secondary room__action" href="room.html?room=hallway" data-navigate aria-label="Enter the Hallway">Enter room</a>
+                        </article>
+
+                        <!-- ENTRY HALL: part of the plan, not an investigation area -->
+                        <div class="room room--entry" aria-label="Entry Hall, the way in">
+                            <span class="room__name room__name--static">Entry Hall</span>
+                            <span class="room__desc">Entrance</span>
+                        </div>
+
+                    </div>
+
+                    <ul class="legend" aria-label="Map key">
+                        <li class="legend__item"><span class="legend__swatch legend__swatch--primary" aria-hidden="true"></span>Primary crime scene</li>
+                        <li class="legend__item"><span class="legend__swatch legend__swatch--open" aria-hidden="true"></span>Available</li>
+                        <li class="legend__item"><span class="legend__swatch legend__swatch--locked" aria-hidden="true"></span>Locked</li>
+                    </ul>
+
+                </div>
+
+                <p class="paper-note hub__note">Start where the evidence is strongest.</p>
+            </section>
+
+            <!-- ==============================================
+                 SIDE: STATUS + TOOLS
+                 ============================================== -->
+            <aside class="hub__side" aria-label="Investigation status and tools">
+
+                <section class="case-file hub__status" aria-labelledby="status-title">
+                    <h2 class="case-file__title" id="status-title">Case Status</h2>
+                    <dl class="dossier dossier--compact">
+                        <div class="dossier__row">
+                            <dt>Case</dt>
+                            <dd>071</dd>
+                        </div>
+                        <div class="dossier__row">
+                            <dt>Status</dt>
+                            <dd><span class="status-badge status--new">Open</span></dd>
+                        </div>
+                        <div class="dossier__row">
+                            <dt>Rooms available</dt>
+                            <dd><span id="stat-rooms">3 / 4</span></dd>
+                        </div>
+                        <div class="dossier__row">
+                            <dt>Evidence collected</dt>
+                            <dd><span id="stat-evidence">0</span></dd>
+                        </div>
+                        <div class="dossier__row">
+                            <dt>Suspects interrogated</dt>
+                            <dd><span id="stat-suspects">0</span></dd>
+                        </div>
+                    </dl>
+                </section>
+
+                <section class="tools" aria-labelledby="tools-title">
+                    <h2 class="tools__title" id="tools-title">Investigation Tools</h2>
+                    <ul class="tools__list">
+                        <li><a class="tool" href="evidence.html" data-navigate>
+                            <svg class="tool__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h16v11H4zM8 8V5h8v3"/><path d="M4 12h16"/></svg>
+                            <span class="tool__text"><span class="tool__name">Evidence</span><span class="tool__sub">Collected items</span></span>
+                        </a></li>
+                        <li><a class="tool" href="suspects.html" data-navigate>
+                            <svg class="tool__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+                            <span class="tool__text"><span class="tool__name">Suspects</span><span class="tool__sub">Review the guests</span></span>
+                        </a></li>
+                        <li><a class="tool" href="notebook.html" data-navigate>
+                            <svg class="tool__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12v18H6z"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>
+                            <span class="tool__text"><span class="tool__name">Notebook</span><span class="tool__sub">Your case notes</span></span>
+                        </a></li>
+                        <li><a class="tool" href="inventory.html" data-navigate>
+                            <svg class="tool__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 9h14l-1 11H6z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg>
+                            <span class="tool__text"><span class="tool__name">Inventory</span><span class="tool__sub">Items you carry</span></span>
+                        </a></li>
+                    </ul>
+                </section>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/map.js"></script>
+</body>
+</html>

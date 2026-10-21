@@ -3,182 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Farewell Dinner</title>
+    <meta name="description" content="Case 071: The Farewell Dinner. An interactive murder mystery investigation that runs in your browser.">
+    <meta name="theme-color" content="#111315">
+    <title>Case 071: The Farewell Dinner</title>
 
     <link rel="stylesheet" href="css/globals.css">
     <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
-<body>
+<body class="home">
 
-    <!-- ======================================================
-         NAVBAR (component preview)
-         ====================================================== -->
-    <nav class="navbar">
-        <span class="navbar__brand">CASE 071</span>
+    <nav class="navbar" aria-label="Primary">
+        <a class="navbar__brand" href="index.html">CASE 071</a>
         <ul class="navbar__links">
-            <li><a class="navbar__link navbar__link--active" href="#">CRIME SCENE</a></li>
-            <li><a class="navbar__link" href="#">EVIDENCE</a></li>
-            <li><a class="navbar__link" href="#">SUSPECTS</a></li>
-            <li><a class="navbar__link" href="#">NOTEBOOK</a></li>
-            <li><a class="navbar__link" href="#">INVENTORY</a></li>
+            <li><a class="navbar__link" href="pages/case.html" data-navigate>CASE FILE</a></li>
         </ul>
     </nav>
 
-    <main class="container" style="padding: var(--space-2xl) var(--space-lg);">
+    <main class="home__main container">
 
-        <header class="fade-in" style="margin-bottom: var(--space-2xl);">
-            <h1>The Farewell Dinner</h1>
-            <h2 style="font-weight: 500; color: var(--text-muted); margin-top: var(--space-xs);">Design System Test Page</h2>
-            <p style="margin-top: var(--space-md); max-width: 60ch;">
-                This is a temporary page used to verify that the Phase 1 foundation —
-                tokens, typography, and reusable components — is loading correctly.
-                It will be replaced by the real Home Screen in Phase 2.
-            </p>
-        </header>
+        <section class="hero" aria-labelledby="case-title">
 
-        <!-- ==================================================
-             BUTTONS
-             ================================================== -->
-        <section style="margin-bottom: var(--space-2xl);">
-            <h3 style="margin-bottom: var(--space-md);">Buttons</h3>
-            <div class="flex" style="gap: var(--space-md); flex-wrap: wrap; align-items: center;">
-                <button class="btn-primary">Begin Investigation</button>
-                <button class="btn-secondary">View Case File</button>
-                <button class="btn-primary" disabled>Locked</button>
-                <button class="btn-secondary" disabled>Locked</button>
-            </div>
-        </section>
+            <div class="hero__text">
 
-        <hr class="divider">
-
-        <!-- ==================================================
-             STATUS BADGES
-             ================================================== -->
-        <section style="margin-bottom: var(--space-2xl);">
-            <h3 style="margin-bottom: var(--space-md);">Status Badges</h3>
-            <div class="flex" style="gap: var(--space-sm); flex-wrap: wrap;">
-                <span class="status-badge status--new">New</span>
-                <span class="status-badge status--confirmed">Confirmed</span>
-                <span class="status-badge status--warning">Warning</span>
-                <span class="status-badge status--locked">Locked</span>
-            </div>
-        </section>
-
-        <hr class="divider">
-
-        <!-- ==================================================
-             PROGRESS BAR
-             ================================================== -->
-        <section style="margin-bottom: var(--space-2xl);">
-            <h3 style="margin-bottom: var(--space-md);">Progress Bar</h3>
-            <div class="progress" style="max-width: 420px;">
-                <div class="progress__header">
-                    <span>Investigation Progress</span>
-                    <span>25%</span>
-                </div>
-                <div class="progress__track">
-                    <div class="progress__fill" style="width: 25%;"></div>
-                </div>
-            </div>
-        </section>
-
-        <hr class="divider">
-
-        <!-- ==================================================
-             CARDS: paper card, case file, evidence card
-             ================================================== -->
-        <section style="margin-bottom: var(--space-2xl);">
-            <h3 style="margin-bottom: var(--space-md);">Cards</h3>
-            <div class="flex" style="gap: var(--space-lg); flex-wrap: wrap; align-items: flex-start;">
-
-                <div class="paper-card" style="width: 260px;">
-                    <h3>Paper Card</h3>
-                    <p style="color: var(--folder-dark); margin-top: var(--space-xs);">
-                        Used for light, paper-toned content blocks.
-                    </p>
+                <div class="hero__folder-tab">
+                    <span class="paper-tab">Case 071</span>
                 </div>
 
-                <div class="case-file" style="width: 300px;">
-                    <div class="case-file__title">Case File — Suspect 03</div>
-                    <div class="case-file__content">
-                        A dark leather container reused for suspect files,
-                        evidence details, and the final accusation screen.
+                <h1 class="hero__title" id="case-title">
+                    <span class="hero__the">The</span>
+                    <span class="hero__line">Farewell</span>
+                    <span class="hero__line">Dinner</span>
+                </h1>
+
+                <p class="hero__subtitle">An interactive murder mystery investigation</p>
+
+                <p class="hero__tagline">One dinner. One victim. Too many secrets.</p>
+
+                <a class="btn-primary hero__cta" href="pages/case.html" data-navigate>Begin Investigation</a>
+
+            </div>
+
+            <div class="evidence" aria-label="Evidence from Case 071">
+
+                <div class="evidence__item evidence__item--folder">
+                    <div class="case-file evidence__folder">
+                        <span class="paper-tab evidence__tab">Investigation File</span>
+
+                        <div class="case-file__title">Incident Report</div>
+
+                        <div class="paper-card evidence__sheet">
+                            <dl class="ledger">
+                                <div class="ledger__row">
+                                    <dt>Case File</dt>
+                                    <dd>071</dd>
+                                </div>
+                                <div class="ledger__row">
+                                    <dt>Case</dt>
+                                    <dd>The Farewell Dinner</dd>
+                                </div>
+                                <div class="ledger__row">
+                                    <dt>Status</dt>
+                                    <dd class="ledger__open">Open</dd>
+                                </div>
+                                <div class="ledger__row">
+                                    <dt>Classification</dt>
+                                    <dd>Confidential</dd>
+                                </div>
+                                <div class="ledger__row">
+                                    <dt>Victim</dt>
+                                    <dd><span class="redacted" role="img" aria-label="Redacted"></span></dd>
+                                </div>
+                            </dl>
+                        </div>
                     </div>
                 </div>
 
-                <div class="evidence-card" style="width: 220px;">
-                    <span class="evidence-card__number">Evidence #04</span>
-                    <span class="evidence-card__title">Torn Letter</span>
-                    <span class="evidence-card__meta">Found in the study, 9:42 PM</span>
+                <div class="evidence__item evidence__item--note">
+                    <p class="paper-note">He said he'd be there by eight. He never was.</p>
                 </div>
 
-            </div>
-        </section>
-
-        <hr class="divider">
-
-        <!-- ==================================================
-             POLAROID
-             ================================================== -->
-        <section style="margin-bottom: var(--space-2xl);">
-            <h3 style="margin-bottom: var(--space-md);">Polaroid</h3>
-            <div class="flex" style="gap: var(--space-2xl); flex-wrap: wrap; align-items: flex-start; padding-top: var(--space-md);">
-                <div class="polaroid polaroid--left">
-                    <img src="assets/images/placeholder-evidence.svg" alt="Placeholder evidence photograph">
-                    <span class="polaroid__caption">The last dinner</span>
+                <div class="evidence__item evidence__item--polaroid">
+                    <figure class="polaroid polaroid--left evidence__photo">
+                        <img src="assets/images/dinner-scene.svg" alt="Overhead view of a dinner table with one empty seat and a tipped glass">
+                        <figcaption class="polaroid__caption">The last dinner</figcaption>
+                    </figure>
                 </div>
-                <div class="polaroid polaroid--right">
-                    <img src="assets/images/placeholder-evidence.svg" alt="Placeholder evidence photograph">
-                    <span class="polaroid__caption">An old friend</span>
-                </div>
-            </div>
-        </section>
 
-        <hr class="divider">
-
-        <!-- ==================================================
-             PAPER NOTE
-             ================================================== -->
-        <section style="margin-bottom: var(--space-2xl);">
-            <h3 style="margin-bottom: var(--space-md);">Paper Note</h3>
-            <div class="paper-note">
-                He said he'd be there by eight. He never was.
-            </div>
-        </section>
-
-        <hr class="divider">
-
-        <!-- ==================================================
-             TOOLTIP
-             ================================================== -->
-        <section style="margin-bottom: var(--space-2xl);">
-            <h3 style="margin-bottom: var(--space-md);">Tooltip</h3>
-            <span class="tooltip" tabindex="0">
-                <span class="btn-secondary">Hover me</span>
-                <span class="tooltip__bubble">Found near the fireplace</span>
-            </span>
-        </section>
-
-        <hr class="divider">
-
-        <!-- ==================================================
-             MODAL (static preview, no open/close JS yet)
-             ================================================== -->
-        <section style="margin-bottom: var(--space-2xl);">
-            <h3 style="margin-bottom: var(--space-md);">Modal</h3>
-            <div class="modal" style="position: relative; inset: auto; height: 320px; background: var(--bg-surface); border-radius: var(--radius-md);">
-                <div class="modal__panel" style="animation: none;">
-                    <button class="modal__close" aria-label="Close modal">&times;</button>
-                    <div class="modal__title">Autopsy Report</div>
-                    <div class="modal__content">
-                        This is a static preview of the modal component. Open/close
-                        behavior will be wired up once gameplay is built.
+                <div class="evidence__item evidence__item--tag">
+                    <div class="evidence-card evidence__tag">
+                        <span class="evidence-card__number">Evidence #01</span>
+                        <span class="evidence-card__title">Dinner Table</span>
+                        <span class="evidence-card__meta">One seat left empty</span>
                     </div>
                 </div>
+
             </div>
+
         </section>
 
     </main>
+
+    <footer class="home__footer container">
+        <span>Case 071</span>
+        <span>The Farewell Dinner</span>
+        <span>Investigation File</span>
+    </footer>
 
     <script src="js/app.js"></script>
 </body>
